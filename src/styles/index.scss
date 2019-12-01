@@ -1,13 +1,62 @@
-@import "~bootstrap/scss/bootstrap.scss";
+.titles{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    font-size: 5em;
+    text-shadow: rgb(255, 217, 63) 1px 0 10px;
+    font-family: 'Kaushan Script', cursive;
+    cursor: grab;
+}
+.subtitle{
+    display: flex;
+    justify-content: center;
+    font-size: 1em;
+}
+.ToDo{
+    transform: rotate(-10deg);
+}.ToDo:hover{
+    transform: rotate(350deg);
+    transition-duration: .9s, .8s, 2s, .8s;
+}
+.list{
+    transform: rotate(10deg);
+}.list:hover{
+    transform: rotate(-350deg);
+    transition-duration: .9s, .8s, 2s, .8s;
+}
 
-/* 
+.todoInput{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto 10px;
+    width: 300px;
+    height: 25px;
+    border: 0;
+    outline: 0;
+    border-bottom: 1px solid rgb(5, 5, 5);
+}
 
-    You can write your own styles here...
-    
-    
-    ...Or you can use the import command to include 
-    other sylesheets into your bunde as well, e.j:
-    
-    import 'relative/path/to/stylesheet.scss';
+.listContainer{
+    margin: 0px auto;
+    width: 300px;
+    list-style: none;
+    padding-left: 0px;
+}
 
-*/
+.listItem{
+    display: inline-block;
+    border-bottom: 1px solid rgba(83, 83, 83, 0.486);
+    justify-content: end;
+    margin: 0px auto;
+    width: 300px;
+    height: 25px;
+    
+}
+
+.done-button{
+    flex-direction:row-reverse;
+    margin: 0px;
+    border: 0px;
+    padding: 0px;
+}

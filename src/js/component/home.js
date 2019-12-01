@@ -1,24 +1,51 @@
-import React from "react";
+import React, { useState } from "react";
 
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
-
-//create your first component
 export function Home() {
+	const [todos, setTodos] = useState([]);
+
+	const [tempValue, setTempValue] = useState([]);
+
 	return (
-		<div className="text-center mt-5">
-			<h1>Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
+		<div className="container">
+			<div className="titles">
+				<span className="ToDo">ToDo </span>
+				<span className="list">List!</span>
+			</div>
+			<div>
+				<p className="subtitle">Keep up with your daily tasks!</p>
+			</div>
+			<input
+				className="todoInput"
+				set
+				type="text"
+				value={tempValue}
+				onChange={e => setTempValue(e.target.value)}
+				onKeyPress={e => {
+					if (e.charCode === 13) {
+						setTodos(todos.concat(tempValue));
+
+						setTempValue("");
+					}
+				}}
+			/>
+
+			{/* <button className="btn">Submit</button> */}
+			<ul className="listContainer">
+				{todos.map((t, i) => (
+					<li className="listItem" key={i} value={""}>
+						{t + " "}
+						<button
+							className="done-button"
+							onClick={() =>
+								setTodos(todos.filter((item, f) => i != f))
+							}>
+							x
+						</button>
+					</li>
+				))}
+			</ul>
 		</div>
 	);
 }
+
+export default Home;
